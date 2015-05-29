@@ -1,0 +1,103 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: url(../images/bg.JPG) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  font-family: Verdana;
+}
+
+html, body {
+  /*width: 100%;
+  height: 100%;*/
+}
+
+.leaderboard {
+  margin: 20px 10%;
+}
+
+.leaderboard header {
+  width: 100%;
+  background: rgba(248, 248, 248, 0.8);
+  height: 88px;
+  margin-bottom: 15px;
+
+  border-bottom: 4px solid #FFF;
+  border-top: 4px solid #FFF;
+}
+
+.leaderboard header h1 {
+  text-align: center;
+  line-height: 80px;
+}
+
+table {
+  width: 100%;
+  border-collapse:separate;
+  border-spacing: 0 10px;
+}
+
+table tr {
+  width: 100%;
+  margin: 10px 0;
+  height: 60px;
+  line-height: 40px;
+  padding: 10px 20px;
+  background: rgba(248, 248, 248, 0.8);
+
+  font-size: 26px;
+}
+
+table tr td {
+  text-align: center;
+
+  border-bottom: 4px solid #FFF;
+  border-top: 4px solid #FFF;
+}
+
+table tr td:nth-child(1) {
+
+}
+
+table tr td:nth-child(2) {
+  text-align: left;
+}
+
+table tr td:last-child {
+  font-weight: bold;
+}
+
+.leader {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.leader td {
+  border-bottom: 4px solid #FFE53D;
+  border-top: 4px solid #FFE53D;
+}
+
+.leader-divide {
+  background: black;
+  height: 20px;
+}
+
+
+.animation {
+  transition: 500ms ease-in all;
+}
+.animation.ng-enter {
+  opacity: 0;
+}
+.animation.ng-leave {
+  display: none;
+  opacity: 1;
+}
+.animation.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+.animation.ng-leave.ng-leave-active {
+  opacity: 0;
+}
