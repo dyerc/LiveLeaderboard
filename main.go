@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"github.com/tealeg/xlsx"
-	"math/rand"
 	"net/http"
 )
 
@@ -44,7 +43,9 @@ func ParseXlsx(file string) []Competition {
 					score.Player = cell.String()
 				} else {
 					r, _ := cell.Int()
-					score.Rounds = append(score.Rounds, r)
+					if j < 3 && len(cell.String()) > 0 {
+						score.Rounds = append(score.Rounds, r)
+					}
 				}
 			}
 
@@ -55,10 +56,6 @@ func ParseXlsx(file string) []Competition {
 	}
 
 	return comps
-}
-
-func randomRound() int {
-	return rand.Intn(84-68) + 68
 }
 
 func main() {
@@ -81,5 +78,6 @@ func main() {
 	})
 
 	// Listen and server on 0.0.0.0:8080
+	fmt.Println("Listening on localhost:8080")
 	r.Run(":8080")
 }

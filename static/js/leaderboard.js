@@ -2,6 +2,7 @@ var app = angular.module('leaderboardApp', ['ngAnimate'])
 
 var LEADERS_SHOWN = 3;
 var SCORES_PER_PAGE = 5;
+var NEXT_PAGE_DELAY = 10 * 1000;
 
 app.config(function($interpolateProvider) {
   $interpolateProvider.startSymbol('[[');
@@ -99,7 +100,7 @@ app.controller('LeaderboardCtrl', function($scope, $http) {
   setInterval(function() {
     $scope.nextPage();
     $scope.$apply();
-  }, 5000);
+  }, NEXT_PAGE_DELAY);
 
   $scope.refresh();
 });
