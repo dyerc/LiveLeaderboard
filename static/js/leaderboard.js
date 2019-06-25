@@ -61,7 +61,20 @@ app.controller('LeaderboardCtrl', function($scope, $http) {
 
     // Calculate totals
     for (var i = 0; i < scores.length; i++) {
-      scores[i].total = scores[i].rounds.reduce(function(a, b){ return a + b; });
+      // Handle N/R
+      var nr = false
+      scores[i].rounds = scores[i].rounds.map(r => {
+        if (r < 1) {
+          nr = true
+          return "N/R"
+        } else {
+          return r
+        }
+      })
+
+      if (!nr) {
+        scores[i].total = scores[i].rounds.reduce(function(a, b){ return a + b; });
+      }
     }
 
     //scores.sort(scoreSort);

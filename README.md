@@ -6,3 +6,7 @@ Open source live scrolling leaderboard for golf competitions. Data is stored in 
 
 # Usage
 
+```
+go build
+./LiveLeaderboard
+```
